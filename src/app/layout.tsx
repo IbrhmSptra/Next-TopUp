@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { NunitoSans } from "../font/NunitoSans";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "./_layouts/Navbar";
 
 export const metadata: Metadata = {
   title: "Next-TopUp",
@@ -16,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={NunitoSans.variable}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
